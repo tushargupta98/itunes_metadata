@@ -53,7 +53,7 @@ public class ItunesQueryService {
      * This service invokes the itunes api to fetch the results based on the query parameters passed to it.
      *
      * */
-    List<MediaMetadataDTO> search(Map<ItunesApiQueryKeys, String> queryParams) {
+    List<MediaMetadataDTO> search(final Map<ItunesApiQueryKeys, String> queryParams) {
         String url = getURL(queryParams);
         log.info("Itunes Query = {}", url);
         ItunesResponseDTO itunesResponseDTO = restTemplate.getForObject(url, ItunesResponseDTO.class);
@@ -62,7 +62,8 @@ public class ItunesQueryService {
                 .distinct()
                 .collect(Collectors.toList());
     }
-    private String getURL(Map<ItunesApiQueryKeys, String> params){
+    private String getURL(final Map<ItunesApiQueryKeys, String> params){
+
         URIBuilder builder = new URIBuilder()
                 .setScheme(SCHEME)
                 .setHost(HOST)

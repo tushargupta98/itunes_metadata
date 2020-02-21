@@ -23,9 +23,9 @@ public class ApplicationConfig {
 
 	@Bean
 	public RestTemplate getRestTemplate(){
-		RestTemplate restTemplate = new RestTemplate();
-		List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+		final RestTemplate restTemplate = new RestTemplate();
+		final List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
+		final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
 		converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
 		messageConverters.add(converter);
 		restTemplate.setMessageConverters(messageConverters);

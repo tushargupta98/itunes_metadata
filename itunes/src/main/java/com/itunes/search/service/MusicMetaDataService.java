@@ -30,7 +30,7 @@ public class MusicMetaDataService {
     /**
      * This service provides the access to all the music track metadata belonging to an artist.
      * */
-    @Cacheable("musicByArtist")
+    @Cacheable(value = "musicByArtist", key="{#artistName}")
     public List<MediaMetadataDTO> getTracksByArtist(final String artistName) {
         log.info("Query Parameter: Artist Name = {}", artistName);
         final Map<ItunesApiQueryKeys, String> params = new HashMap<>();

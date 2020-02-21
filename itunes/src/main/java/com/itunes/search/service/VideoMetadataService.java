@@ -31,7 +31,7 @@ public class VideoMetadataService {
     /**
      * This method provides the meta data for all the music video tracks available with Itunes for aa given artist
      * */
-    @Cacheable("videosByArtist")
+    @Cacheable(value="videosByArtist",key="{#artistName}")
     public List<MediaMetadataDTO> getTracksByArtist(final String artistName) {
         log.info("Query Parameter: Artist Name = {}", artistName);
         final Map<ItunesApiQueryKeys, String> params = new HashMap<>();

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.itunes</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>itunes-search</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>search</name>
-	<description>Demo project for Spring Boot</description>
+	<description>This application helps to query metadata for media from itunes api</description>
 
 	<properties>
 		<java.version>1.8</java.version>
